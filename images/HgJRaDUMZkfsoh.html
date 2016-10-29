@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html class="root61">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<script type="text/javascript">
+	(function(w){
+		function isMobilePhone() {
+			/**
+			* getCookie  获取指定cookie值
+			* @param sName   指定参数
+			*/
+			function getCookie(sName) {
+				var sCookies = document.cookie ;
+				if ("string" == typeof(sName)) {
+					var sRE = "(?:; )?"+sName+"=([^;]*);?" ;
+					var reRE = new RegExp(sRE) ;
+					if (reRE.test(sCookies)) {
+						return decodeURIComponent(RegExp["$1"]) ;
+					} else {
+						return null ;
+					}
+				} else {
+					return sCookies ;
+				}
+			}
+			/**
+			* getBeforeUrlType    获取上一页面来源信息
+			* @param result    0——无源头页面，1——来源为微信手Q，2——来源为普通的m端，3——来源为京致衣橱APP，4——来源为京东app，5——来源为pc(pad逻辑和pc一样)
+			*/
+			function getBeforeUrlType() {
+				var url = document.referrer , stateResult = 0, _userAgent = window.navigator.userAgent.toLocaleLowerCase();
+												if (typeof(url) !== "undefined" && url.length > 0) {
+					stateResult = /wq[a-zA-Z0-9]*\.jd\.com/.test(url) ? 1 : 2;
+					if (_userAgent.indexOf('jzyc') !== -1) {
+						stateResult = 3;
+					}else if (_userAgent.indexOf('jdapp') !== -1) {
+						stateResult = 4;
+					}else if(_userAgent.indexOf('iphone') === -1 && _userAgent.indexOf('android') === -1 && _userAgent.indexOf('windows phone') === -1){
+						stateResult = 5;
+					}
+				}
+				return stateResult;
+			}
+			/**
+			* isPcPage 是否是pc活动
+			*/
+			function isPcPage(url) {
+				var pcDomains = ['sale.jd.com', 'pinpaijie.jd.com', 'jrj.jd.com'];
+				for (var i = 0, len = pcDomains.length; i < len; i++) {
+					if (url.indexOf(pcDomains[i]) != -1) return true;
+				}
+				return false;
+			}
+			var pcPageTip = '您将要跳转到电脑版网页，会使用较多手机上网流量，是否继续？';
+			var cUrl = window.location.href;
+			var referrer = document.referrer;
+			var mIndex = '//m.jd.com/';
+
+			var mFlag = window.location.hash, pcmFlag = getCookie('pcm');
+
+			var userAgent = navigator.userAgent;
+						var beforeUrlState = getBeforeUrlType();
+						var _mUrl = "";
+						var _wqUrl = "";
+
+						if(beforeUrlState === 1 || beforeUrlState === 3){
+														window.location.href = cUrl.replace(/\/act\//,'/wq/hd/act/');
+							}
+						else if(beforeUrlState === 2 || beforeUrlState === 4){
+														var _tempUrl = cUrl.replace("//","").replace("http:","").replace("https:","");
+					var _mUrl = cUrl.replace(/sale\.jd\.com\/act/,'m.jd.com/sale/act');
+					// no sale m & mc
+					if(isPcPage(_mUrl) || mFlag == '#m' || pcmFlag == '1') {
+						if (confirm(pcPageTip)) {
+							return;
+						} else {
+							window.location.href = mIndex;
+							return;
+						}
+					}
+					if (_mUrl.indexOf('m.jd.com') != -1) {
+						window.location.href = "//h5.m.jd.com/active/fastshop/index.html?url=" + _tempUrl;
+					}
+							}
+						else if(beforeUrlState === 0){
+				if(userAgent){
+					userAgent = userAgent.toUpperCase();
+					if(userAgent.indexOf("PAD")>-1){
+						return;
+					}
+					var mobilePhoneList = ["IOS","IPHONE","ANDROID","WINDOWS PHONE"];
+					for(var i=0,len=mobilePhoneList.length;i<len;i++){
+						if(userAgent.indexOf(mobilePhoneList[i])>-1){
+																																	var mUrl = cUrl.replace(/sale\.jd\.com\/act/,'m.jd.com/sale/act');
+							// no sale m & mc
+							if(isPcPage(mUrl) || mFlag == '#m' || pcmFlag == '1') {
+								if (confirm(pcPageTip)) {
+									return;
+								} else {
+									window.location.href = mIndex;
+									return;
+								}
+							}
+							// M page
+							if (mUrl.indexOf('m.jd.com') != -1) {
+								var tempUrl = cUrl.replace("//","").replace("http:","").replace("https:","");
+								var newmUrl = "//h5.m.jd.com/active/fastshop/index.html?url="+tempUrl;
+								window.location.href = newmUrl;
+								return;
+							}
+												}
+					}
+				}
+			}
+		}
+		w.isMobilePhone = isMobilePhone;
+	})(window);
+			 isMobilePhone();
+	</script>
+	    <!--JA统计-->
+	<script>var jdpts=new Object();jdpts._st=new Date().getTime();</script>
+    <meta content="京东PC端每日一品活动为您推荐当下最流行的品牌null,欢迎参加京东PC端每日一品" name="description">
+    <meta content="京东PC端每日一品,京东家居家装活动,京东" name="keywords">
+	<title>
+							PC端每日一品 - 京东家居家装专题活动-京东
+			</title>
+	<link rel="icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico" type="image/x-icon">
+
+		
+    <link type="text/css" rel="stylesheet"  href="//misc.360buyimg.com/jdf/1.0.0/unit/??ui-base/1.0.0/ui-base.css,shortcut/2.0.0/shortcut.css,global-header/1.0.0/global-header.css,myjd/2.0.0/myjd.css,nav/2.0.0/nav.css,shoppingcart/2.0.0/shoppingcart.css,global-footer/1.0.0/global-footer.css,service/1.0.0/service.css"/>
+	<link rel="stylesheet" type="text/css" href="//static.360buyimg.com/jshop/sale-p/view/20151221110035/css/??jdCssInit.css,css_cube_application_layout.css?t=201605122327"/>
+
+	<script src="//misc.360buyimg.com/jdf/lib/jquery-1.6.4.js?t=1608191038"></script>
+	<!--[if lte IE 7]><script type="text/javascript" src="//static.360buyimg.com/jshop/common/jquery/json2.js"></script><![endif]-->
+	<script type="text/javascript" src="//misc.360buyimg.com/??jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+	<script type="text/javascript" src="//static.360buyimg.com/jshop/sale-p/view/stable/??seajs-combo.js?t=1608191038"></script>
+
+    <style>
+		.single-place{position:absolute;bottom:0;left:0;}
+/*左右栏布局*/
+.right-left-mid-lay{overflow:hidden;zoom:1;}
+.right-left-left{width:190px;float:left;overflow:hidden;height:200px;margin-right:7px;padding-bottom:12px;position:relative;}
+.right-left-right-extra{float:right;width:789px;overflow:hidden;position:relative;padding-bottom:10px;height:200px;}
+.right-left-place{position:absolute;bottom:0;left:0;}
+/*左右栏布局*/
+.jw-tmpl14-176593 .item-list{margin-right:-10px;overflow:hidden}.jw-tmpl14-176593 .item{position:relative;width:188px;height:298px;border:1px solid #d4d4d4;margin:0 10px 10px 0;float:left;font-size:0;background:#f5f5f5}.jw-tmpl14-176593 .img-wrapper{display:block;padding-top:2px;height:184px;text-align:center;background:url(//img11.360buyimg.com/cms/jfs/t667/286/1398676284/5860/54fc0ad5/54d09c29N1bc1cd77.gif) no-repeat 50% 50% #fff}.jw-tmpl14-176593 .img-wrapper img{width:188px;height:184px}.jw-tmpl14-176593 .item-title{display:block;margin:0 10px;height:41px;overflow:hidden;text-overflow:ellipsis;line-height:19px;font-size:12px;color:#444;border-bottom:1px dashed #bbb9b9}.jw-tmpl14-176593 .price-wrapper{display:block;text-align:center;height:41px;line-height:41px;margin:0 10px;font-size:12px;color:#666}.jw-tmpl14-176593 .price{color:#f21313;font-size:27px}.jw-tmpl14-176593 .price em{font-size:16px}.jw-tmpl14-176593 .btn{position:relative;display:block;color:#fff;font-size:12px;width:73px;height:23px;margin:0 auto;line-height:25px;text-align:center;background-color:#e20e1e;border-bottom:2px solid #ff4251; top:-6px;}.jw-tmpl14-176593 .btn-corner,.jw-tmpl14-176593 .btn-mask{position:absolute;display:block;top:0;left:0;width:73px;height:25px}.jw-tmpl14-176593 .btn-corner{background:url(//img11.360buyimg.com/cms/jfs/t2398/241/415925408/1078/176aa5df/56090fa8N24bfe9d9.png) no-repeat 0 0}.jw-tmpl14-176593 .btn-mask{background-repeat:no-repeat;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiKDAsIDAsIDApIiBzdG9wLW9wYWNpdHk9IjAiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0icmdiKDI1NSwgMjU1LCAyNTUpIiBzdG9wLW9wYWNpdHk9IjAuOCIvPjxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSJyZ2IoMjU1LCAyNTUsIDI1NSkiIHN0b3Atb3BhY2l0eT0iMC44Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2IoMCwgMCwgMCkiIHN0b3Atb3BhY2l0eT0iMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNsZXNzaGF0LWdlbmVyYXRlZCkiIC8+PC9zdmc+);background-image:-webkit-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);background-image:-moz-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);background-image:-o-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);background-image:linear-gradient(135deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);background-position:-74px 0}.jw-tmpl14-176593 a:hover .btn-mask{background-position:74px 0;-webkit-transition-duration:400ms;-moz-transition-duration:400ms;-o-transition-duration:400ms;transition-duration:400ms}.jw-tmpl14-176593 .sold-out-mask{display:none;position:absolute;width:190px;height:186px;top:-1px;left:-1px}.jw-tmpl14-176593 .sold-out-mask .mask{display:block;width:100%;height:100%;background-color:#000;filter:alpha(opacity=75);background-color:rgba(0,0,0,.75)}.jw-tmpl14-176593 .sold-out-mask .mask-img{position:absolute;display:block;width:100%;height:100%;top:0;left:0;background:url(//img13.360buyimg.com/cms/jfs/t1894/319/607542735/4476/f52f7bd8/561b55ddN98f73f22.png) no-repeat 50% 50%}.jw-tmpl14-176593 .sold-out .sold-out-mask{display:block}
+.jdNum{font-size: 20px;}
+
+.userdefined-153704 .j-module{zoom:1; overflow:hidden;}
+.container h4{background:#fff;height:20px;padding-right:0px;}
+.container .shrink{width:20px;height:20px;background:url("//img14.360buyimg.com/cms/g14/M00/04/1C/rBEhVlHdGEUIAAAAAAAGCRctXCUAAA9BAP_9KUAAAYh058.png");float:right;margin-right:5px;}
+.container .shrink{background-position: -24px 0;}
+.container .extend{background-position:0 0;}
+.container .tips{background-position:0 -24px;width:88px;}
+
+    </style>
+	<!-- 支持所有活动在IPAD上正常显示 -->
+	<script type="text/javascript" >
+		if(/ipad/i.test(navigator.userAgent)){
+			if(!/safari/i.test(navigator.userAgent) || /jdapp/i.test(navigator.userAgent)){
+			 jQuery('head').append('<style>.d-pad{display:none;}</style');
+			}
+		}
+	</script>
+
+
+   <!--好东西相关-->
+   <link type="text/css" rel="stylesheet"  href="//misc.360buyimg.com/channel/hw100/1.0.0/widget/??header-jshop/header-jshop.css" source="widget"/>
+   <script type="text/javascript" src="//misc.360buyimg.com/channel/hw100/1.0.0/widget/??header-jshop/header-jshop.js" source="widget"></script>
+
+</head>
+<body>
+	<input type="hidden"  id="JSHOP_CHANNEL_FLAG" value="hao"/>
+	<input type="hidden" value="433151" id="pageInstance_appId"/>
+	<input type="hidden" value="10078704" id="pageInstance_id"/>
+	<input type="hidden"  id="moduleScript" value='<script type="text/javascript" moduleinit="module" src="//sale.jd.com/jm.htm?js=/script/module/goods-rec/GoodsRec.js,/script/module/user-define/UserDefine.js,/script/module/side-panel/side-panel.js&t=1608191038"></script>'/>
+	<input id="resourcePath" type="hidden" value="//static.360buyimg.com/jshop/sale-p/view/20151221110035/"/>
+    <input id="timestamp" type="hidden" value="201605122327"/>
+	<input id="testSidebar" type="hidden" value="test"/>
+
+	<div class="d-pad">
+	<div id="shortcut-2014">
+	<div class="w">
+    	<ul class="fl">
+    		<li id="ttbar-home"><a href="//www.jd.com/" target="_blank">京东首页</a></li>
+    	</ul>
+    	<ul class="fr">
+			<li class="fore1" id="ttbar-login">
+				<a href="javascript:login();" class="link-login">你好，请登录</a>  <a href="javascript:regist();" class="link-regist style-red">免费注册</a>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore2">
+				<div class="dt">
+					<a target="_blank" href="//order.jd.com/center/list.action">我的订单</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore3 dorpdown" id="ttbar-myjd">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>
+					<a target="_blank" href="//home.jd.com/">我的京东</a>
+				</div>
+				<div class="dd dorpdown-layer"></div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore4">
+				<div class="dt">
+					<a target="_blank" href="//vip.jd.com/">京东会员</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore5">
+				<div class="dt">
+					<a target="_blank" href="//b.jd.com/">企业采购</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore6 dorpdown" id="ttbar-apps">
+				<div class="dt cw-icon">
+					<i class="ci-left"></i>
+					<i class="ci-right"><s>◇</s></i>
+					<a target="_blank" href="//app.jd.com/">手机京东</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore7 dorpdown" id="ttbar-atte">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>关注京东
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore8 dorpdown" id="ttbar-serv">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>客户服务
+				</div>
+				<div class="dd dorpdown-layer"></div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore9 dorpdown" id="ttbar-navs">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>网站导航
+				</div>
+				<div class="dd dorpdown-layer"></div>
+			</li>
+    	</ul>
+		<span class="clr"></span>
+    </div>
+</div>
+<div id="o-header-2013"><div id="header-2013" style="display:none;"></div></div>
+	<div class="hw-header">
+	<div class="w">
+		<div class="logo" clstag="sale|keycount|haowu100|logo">
+			<a href="//hao.jd.com/" title="好物100">好物100</a>
+		</div>
+		<div id="search-2014" >
+			<ul id="shelper" class="hide"></ul>
+			<div class="form">
+				<input type="text" onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key" accesskey="s" class="text" />
+				<button onclick="search('key');return false;" class="button cw-icon"> <i></i>
+					搜索
+				</button>
+			</div>
+		</div>
+		<ul class="nav">
+			<li id="nav-home" clstag="sale|keycount|haowu100|shouye"><a href="//hao.jd.com/" title="首页" target="_blank">首页</a></li>
+			<li id="nav-news" clstag="sale|keycount|haowu100|zixun"><a href="//hao.jd.com/ilist.html" title="头条资讯" target="_blank">头条资讯</a></li>
+			<li id="nav-item" clstag="sale|keycount|haowu100|haowu"><a href="//hao.jd.com/goods/recommend?sortType=LATEST&idx=1" title="发现好物" target="_blank">发现好物</a></li>
+			<!-- <li id="nav-fashion" clstag=""><a href="//sale.jd.com/act/UgmbLPcO4V3N6.html" title="时尚圈" target="_blank">时尚圈</a></li> -->
+			<li id="nav-cheats" clstag="sale|keycount|haowu100|miji"><a href="//hao.jd.com/hgl.html" title="省钱秘笈" target="_blank">省钱秘笈</a></li>
+		</ul>
+		</div>
+</div>
+<script type="text/javascript">(function(){if(pageConfig.navId){var object=document.getElementById("nav-"+pageConfig.navId);if(object)object.className+=" curr";}})();</script>
+
+	</div>
+
+	<div class="layoutcontainer" isfixed="0" style="margin:0 auto;width:px; background:#ececec ">
+		<input id="vender_id" type="hidden" value="" />
+	
+	
+	
+      <div class="d-layout-area " >
+     <div class='d-layout' id="11129850"   >
+	<div class='d-layout-one w990 '>
+	 
+		 	</div>
+     </div>
+</div>
+
+	
+      <div class="d-layout-area " style="background: url(//img20.360buyimg.com/cms/jfs/t2770/177/3770051622/80748/a8f66c48/5799e1c5N0605c905.jpg) center top no-repeat;">
+     <div class='d-layout' id="10913607"   >
+	<div class='d-layout-one w990 '>
+	 
+
+
+		<div class=' userdefined-153704' instanceId='10913608'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3250/23/703763570/150246/35d9d240/57bd477fN1c9d56cf.jpg" width="990" height="518" border="0" usemap="#Map342" alt="">
+<map name="Map342"> <area shape="rect" coords="108,447,238,477" href="//item.jd.com/2517358.html" target="_blank" clstag="sale|keycount|10913608|1"> <area shape="rect" coords="366,0,802,524" href="//item.jd.com/2517358.html" clstag="sale|keycount|10913608|2"> <area shape="rect" coords="110,482,237,512" href="//mall.jd.com/index-1000002455.html" target="_blank" clstag="sale|keycount|10913608|3"></map>
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+
+
+		<div class=' userdefined-153704' instanceId='14341090'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3184/323/682090489/89595/683fb735/57bd35caN731eb08f.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3061/75/651883559/6875/7a8b793/57bd35caNd27a0d06.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3040/127/1091982243/156500/ea89c048/57bd35cbN6e669298.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3079/292/659422935/8819/6dde10e6/57bd35cbN14e035ba.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3238/112/668242988/185801/944d498e/57bd35d9Na61198ce.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3247/309/702426378/12614/bd2e69ab/57bd35d9N3d4c5f8a.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3088/261/672715276/246865/b7e00361/57bd35dbN9604a2ab.jpg" alt="">
+<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/imgzone/jfs/t3199/316/690960145/1547/3bb42c95/57bd35dbNb01f8766.jpg" alt="">
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+
+
+		<div class=' userdefined-153704' instanceId='15313715'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img11.360buyimg.com/cms/jfs/t3244/58/771882589/31726/90572de3/57beacb6N06102d5c.jpg" width="990" height="76" alt="">
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+		 	</div>
+     </div>
+</div>
+
+<div class="d-layout-area  " >
+     <div class="d-layout" name="左右栏布局（190x790)"  id="10913609" area="body" layout_name="insertLayout" >
+	  <div class="d-layout-two-left w190 " >
+		 
+
+
+		<div class=' userdefined-153704' instanceId='10913610'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<a href="//mall.jd.com/index-1000002455.html" target="_blank" clstag="sale|keycount|10913610|1"><img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img10.360buyimg.com/cms/jfs/t3169/19/731983141/58365/8ca976cb/57be4fa3Ndf44fb3a.jpg" width="190" height="610" alt=""></a>
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+		 	  </div>
+	  <div class="d-layout-two-right w790 ">	
+		
+
+
+		<div class=' jw-tmpl14-176593' instanceId='10913615'  style="margin-bottom:0px;" module-name="GoodsRec" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <span><ul class="item-list">
+    <li class="item" data-skuid="1229445">
+    <a href="//item.jd.com/1229445.html" target="_blank"  clstag="sale|keycount|10913615|1">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img11.360buyimg.com/n6/jfs/t2794/361/1829580725/37138/d41be8d6/574b9b10Nf6c1007a.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1109" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1109</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='1229445' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="1229444">
+    <a href="//item.jd.com/1229444.html" target="_blank"  clstag="sale|keycount|10913615|2">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img13.360buyimg.com/n6/jfs/t2785/127/3459252971/150997/e03f3a05/57907d26Nea611e95.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1125短款" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1125短款</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='1229444' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="1229446">
+    <a href="//item.jd.com/1229446.html" target="_blank"  clstag="sale|keycount|10913615|3">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img12.360buyimg.com/n6/jfs/t2890/244/3483307541/150997/e03f3a05/578ee96cNd4b59948.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1125长款" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1125长款</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='1229446' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="1229447">
+    <a href="//item.jd.com/1229447.html" target="_blank"  clstag="sale|keycount|10913615|4">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img12.360buyimg.com/n6/jfs/t2686/217/3480552443/147604/496e5540/578ee59cN473921d1.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1130长款" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1130长款</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='1229447' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="1229448">
+    <a href="//item.jd.com/1229448.html" target="_blank"  clstag="sale|keycount|10913615|5">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img14.360buyimg.com/n6/jfs/t2899/358/710332957/104349/7de6d0cd/57232b6eNc5308378.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1130短款" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1130短款</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='1229448' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="2517358">
+    <a href="//item.jd.com/2517358.html" target="_blank"  clstag="sale|keycount|10913615|6">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img13.360buyimg.com/n6/jfs/t2377/328/2656597849/107771/12914250/56e939b9Nb212297f.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1330" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1330</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='2517358' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="2736702">
+    <a href="//item.jd.com/2736702.html" target="_blank"  clstag="sale|keycount|10913615|7">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img13.360buyimg.com/n6/jfs/t2869/355/3528475544/158755/6590a94/57907a29N829f99d6.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1326" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1326</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='2736702' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+    <li class="item" data-skuid="3232690">
+    <a href="//item.jd.com/3232690.html" target="_blank"  clstag="sale|keycount|10913615|8">
+      <span class="img-wrapper">
+        <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img13.360buyimg.com/n6/jfs/t2653/352/3465678269/150526/ff5e77a3/578eef85N4a301d58.jpg" alt="松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1325" />
+      </span>
+      <span class="item-title">松下（panasonic）智能马桶盖洁身器日本电子坐便盖板加热冲洗1325</span>
+      <span class="price-wrapper"> <span class="price"><em>¥</em><span class='jdNum'  jshop='price'  jdprice='3232690' ></span></span></span>
+      <span class="btn">立即抢购 ><span class="btn-corner"></span><span class="btn-mask"></span><span class="favor-heart"></span></span>
+      <span class="sold-out-mask">
+        <span class="mask"></span>
+        <span class="mask-img"></span>
+      </span>
+    </a>
+  </li>
+  </ul> </span>
+
+     </div>
+
+	 </div>
+
+		 	  </div>
+     </div>
+</div>
+
+      <div class="d-layout-area " >
+     <div class='d-layout' id="10913620"   >
+	<div class='d-layout-one w990 '>
+	 
+
+
+		<div class=' sidePanel-153707' instanceId='10913621'  style="margin-bottom: 10px;" module-name="sidePanel" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		  <div class="j-module" module-function="base" module-param="{height:600,top:0,width:120,horizontal:2,show:1 
+}">
+   <div class="J-container">
+<table id="__01" height="538" border="0" cellpadding="0" cellspacing="0" width="123"> 
+ <tbody> 
+  <tr> 
+   <td><a href="//item.jd.com/10254868030.html" target="_blank" clstag="sale|keycount|10787286|1"><img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img11.360buyimg.com/cms/jfs/t3016/307/1165747426/60616/793cac57/57beacceN9c8debca.png" alt="" height="364" width="123"></a></td> 
+  </tr> 
+  <tr> 
+   <td><a href="#" clstag="sale|keycount|10787868|1"><img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img11.360buyimg.com/cms/jfs/t2866/145/1621117785/28023/f9abe364/57451aa0N51c8b1e6.png" alt="" height="174" width="123"></a></td> 
+  </tr> 
+ </tbody>
+</table>
+<a href="//item.jd.com/10254868030.html" target="_blank" clstag="sale|keycount|10724284|3"></a>
+</div>
+</div>
+     </div>
+
+	 </div>
+
+
+
+		<div class=' sidePanel-153707' instanceId='10913622'  style="margin-bottom: 10px;" module-name="sidePanel" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		  <div class="j-module" module-function="base" module-param="{height:100,top:0,width:990,horizontal:3,show:1 
+}">
+   <div class="J-container">
+<div align="center"> 
+ <img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img13.360buyimg.com/cms/jfs/t3190/93/741507780/115696/3d89cde3/57be9874N658b8ba3.png" alt="" width="987" height="100" usemap="#Map123" border="0"> 
+ <map name="Map123"> <area shape="rect" coords="4,1,140,111" href="//item.jd.com/10052912180.html " target="_blank" clstag="sale|keycount|10787494|1"> <area shape="rect" coords="144,3,283,107" href="//item.jd.com/2517358.html" target="_blank" clstag="sale|keycount|10787494|2"> <area shape="rect" coords="293,6,423,117" href="//item.jd.com/10254868030.html " target="_blank" clstag="sale|keycount|10787494|3"> <area shape="rect" coords="424,5,559,111" href="https://item.jd.com/10466221116.html " target="_blank" clstag="sale|keycount|10787494|4"> <area shape="rect" coords="565,5,700,110" href="//item.jd.com/2315478.html " target="_blank" clstag="sale|keycount|10787494|5"> <area shape="rect" coords="704,3,842,113" href="https://item.jd.com/10518765491.html " target="_blank" clstag="sale|keycount|10787494|6"> <area shape="rect" coords="848,7,984,108" href="//item.jd.com/3100636.html " target="_blank" clstag="sale|keycount|10787494|7"> </map>
+</div>
+</div>
+</div>
+     </div>
+
+	 </div>
+
+		 	</div>
+     </div>
+</div>
+
+      <div class="d-layout-area " >
+     <div class='d-layout' id="13109155"   >
+	<div class='d-layout-one w990 '>
+	 
+
+
+		<div class=' userdefined-153704' instanceId='13109158'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<style type="text/css">/* channel-decoration/1.0.0 recommend.css Date:2016-04-07 10:34:59 */
+.floor-decoration-recommend {
+	width: 950px;
+	height: 175px;
+	padding: 40px 20px;
+	background: #f5f7f6;
+	margin-bottom: 50px;
+	overflow: visible
+}
+
+.floor-decoration-recommend .left-box {
+	float: left;
+	width: 475px;
+	height: 175px;
+	border-right: 1px solid #eaeaea
+}
+
+.floor-decoration-recommend .left-box .title {
+	color: #333;
+	font: 24px/24px "Microsoft Yahei";
+	text-align: center
+}
+
+.floor-decoration-recommend .left-box .title .icon {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 30px;
+	height: 30px;
+	background: url(//misc.360buyimg.com/channel/decoration/1.0.0/widget/recommend/i/tuijian_icon.png) no-repeat 0 0;
+	margin-right: 5px
+}
+
+.floor-decoration-recommend .left-box .title .text {
+	vertical-align: top
+}
+
+.floor-decoration-recommend .left-box .p-info {
+	font: 12px/12px "Microsoft Yahei";
+	color: #999;
+	text-align: center
+}
+
+.floor-decoration-recommend .left-box .p-info .color {
+	color: #22b976
+}
+
+.floor-decoration-recommend .left-box .slogan {
+	width: 455px;
+	height: 130px;
+	margin-right: 20px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item {
+	float: left;
+	width: 150px;
+	height: 130px;
+	text-align: center
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item .p-img {
+	width: 54px;
+	height: 60px;
+	margin: 15px auto;
+	background: url(//misc.360buyimg.com/channel/decoration/1.0.0/widget/recommend/i/tuijian_icon.png) no-repeat
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item .p-slogan {
+	font: 18px/18px "Microsoft Yahei";
+	color: #333;
+	margin-bottom: 10px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item .p-info {
+	font: 12px/12px "Microsoft Yahei";
+	color: #999
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item.fore1 .p-img {
+	background-position: 0 -95px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item.fore2 {
+	width: 155px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item.fore2 .p-img {
+	background-position: 4px -162px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item.fore2 .p-info {
+	padding: 0 20px
+}
+
+.floor-decoration-recommend .left-box .slogan .slogan-item.fore3 .p-img {
+	background-position: 0 -27px
+}
+
+.floor-decoration-recommend .right-box {
+	float: left;
+	width: 454px;
+	height: 175px;
+	padding-left: 20px
+}
+
+.floor-decoration-recommend .right-box .form-box {
+	margin-left: -10px
+}
+
+.floor-decoration-recommend .right-box .form-box .form1 {
+	display: block
+}
+
+.floor-decoration-recommend .right-box .form-box .form2 {
+	display: none
+}
+
+.floor-decoration-recommend .right-box .form-box .select {
+	position: relative;
+	float: left;
+	height: 46px;
+	border: 2px solid #c6eadc;
+	margin-left: 10px;
+	_margin-left: 5px;
+	margin-bottom: 10px;
+	padding-left: 9px;
+	font: 12px/46px "Microsoft Yahei";
+	color: #333;
+	background: #fff;
+	cursor: pointer
+}
+
+.floor-decoration-recommend .right-box .form-box .select.first {
+	*z-index: 3
+}
+
+.floor-decoration-recommend .right-box .form-box .select .text.error {
+	color: #d23442
+}
+
+.floor-decoration-recommend .right-box .form-box .select .down {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 10px;
+	height: 10px;
+	background: url(//misc.360buyimg.com/channel/decoration/1.0.0/widget/recommend/i/tuijian_icon.png) no-repeat -40px -5px
+}
+
+.floor-decoration-recommend .right-box .form-box .select .option-list {
+	display: none;
+	position: absolute;
+	top: 46px;
+	left: -2px;
+	background: #fff;
+	border: 2px solid #c6eadc;
+	border-top: 0;
+	z-index: 2
+}
+
+.floor-decoration-recommend .right-box .form-box .select .option-list.city-list,.floor-decoration-recommend .right-box .form-box .select .option-list.province-list {
+	max-height: 225px;
+	_height: expression((document.documentElement.clientHeight||document.body.clientHeight)<225?"225px":"");
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.floor-decoration-recommend .right-box .form-box .select .option-list .option {
+	height: 49px;
+	border-top: 1px solid #c6eadc;
+	padding-left: 9px
+}
+
+.floor-decoration-recommend .right-box .form-box .select .option-list .option:hover {
+	background: #c6eadc
+}
+
+.floor-decoration-recommend .right-box .form-box .select-l,.floor-decoration-recommend .right-box .form-box .select-l .option {
+	width: 209px
+}
+
+.floor-decoration-recommend .right-box .form-box .select-s,.floor-decoration-recommend .right-box .form-box .select-s .option {
+	width: 93px
+}
+
+.floor-decoration-recommend .right-box .form-box .select-xs {
+	width: 37px;
+	height: 36px;
+	line-height: 36px;
+	margin-left: 5px;
+	*z-index: 3
+}
+
+.floor-decoration-recommend .right-box .form-box .select-xs .down {
+	top: 16px
+}
+
+.floor-decoration-recommend .right-box .form-box .select-xs .option-list {
+	top: 36px
+}
+
+.floor-decoration-recommend .right-box .form-box .select-xs .option-list .option {
+	width: 37px;
+	height: 39px
+}
+
+.floor-decoration-recommend .right-box .form-box .input-box {
+	position: relative;
+	float: left;
+	width: 222px;
+	height: 50px;
+	margin-left: 10px;
+	*margin-left: 5px;
+	_margin-left: 3px;
+	margin-bottom: 10px
+}
+
+.floor-decoration-recommend .right-box .form-box .input-box .input {
+	width: 209px;
+	height: 46px;
+	border: 2px solid #c6eadc;
+	padding-left: 9px;
+	font: 12px/46px "Microsoft Yahei";
+	color: #333;
+	background: #fff
+}
+
+.floor-decoration-recommend .right-box .form-box .input-box .input.error {
+	color: #d23442
+}
+
+.floor-decoration-recommend .right-box .form-box .input-box .unit {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font: 12px/46px "Microsoft Yahei"
+}
+
+.floor-decoration-recommend .right-box .form-box .p-info {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	font: 16px/45px "Microsoft Yahei";
+	color: #333
+}
+
+.floor-decoration-recommend .right-box .form-box .p-info .recommend-count {
+	font-weight: 700;
+	color: #22b976
+}
+
+.floor-decoration-recommend .right-box .form-box .p-btn {
+	float: right;
+	width: 222px;
+	height: 45px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font: 16px/45px "Microsoft Yahei";
+	color: #fff;
+	background: #22b976;
+	text-align: center
+}
+
+.floor-decoration-recommend .right-box .form-box .p-btn:hover {
+	background: #29d58b
+}
+
+.floor-decoration-recommend .right-box .form-box .p-btn-return {
+	float: left;
+	margin-top: 0;
+	background: #999
+}
+
+.floor-decoration-recommend .right-box .form-box .p-btn-return:hover {
+	background: #aaa
+}
+
+.floor-decoration-recommend .right-box .form-box .p-btn-apply {
+	float: left;
+	margin-top: 0
+}
+
+.floor-decoration-recommend .right-box .form-box .p-text {
+	float: left;
+	font: 12px/40px "Microsoft Yahei";
+	color: #333;
+	margin-left: 5px;
+	margin-bottom: 10px
+}
+
+.floor-decoration-recommend .right-box .form-box .p-text.fore1 {
+	margin-left: 10px;
+	margin-right: 15px
+}
+
+.floor-decoration-recommend .right-box .form-box .p-tip {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	font: 12px/12px "Microsoft Yahei";
+	color: #333;
+	_line-height: 14px
+}
+
+.apply-success {
+	display: none;
+	width: 495px;
+	height: 130px;
+	padding: 60px 0;
+	border: 10px solid #f5f7f6;
+	-webkit-box-shadow: 2px 2px 20px rgba(0,0,0,.5);
+	-moz-box-shadow: 2px 2px 20px rgba(0,0,0,.5);
+	box-shadow: 2px 2px 20px rgba(0,0,0,.5);
+	background: #fff;
+	color: #333
+}
+
+.apply-success .p-info {
+	position: relative;
+	margin-left: 128px
+}
+
+.apply-success .p-info .success-icon {
+	position: absolute;
+	top: 0;
+	left: -55px;
+	width: 50px;
+	height: 50px;
+	background: url(//misc.360buyimg.com/channel/decoration/1.0.0/widget/recommend/i/tuijian_icon.png) no-repeat 0 -232px
+}
+
+.apply-success .p-info .applied-icon {
+	background: url(//misc.360buyimg.com/channel/decoration/1.0.0/widget/recommend/i/tuijian_icon.png) no-repeat 0 -286px
+}
+
+.apply-success .p-info .p-name {
+	font: 24px/24px "Microsoft Yahei";
+	margin-bottom: 10px
+}
+
+.apply-success .p-info .p-text {
+	font: 12px/12px "Microsoft Yahei";
+	margin-bottom: 40px
+}
+
+.apply-success .p-btn {
+	display: block;
+	margin: 0 auto;
+	width: 238px;
+	height: 45px;
+	font: 18px/45px "Microsoft Yahei";
+	color: #fff;
+	background: #22b976;
+	text-align: center;
+	cursor: pointer
+}
+
+.apply-success .p-btn:hover {
+	background: #29d58b;
+	_color: #fff
+}
+
+.root61 .floor-decoration-recommend {
+	width: 1130px;
+	padding: 40px
+}
+
+.root61 .floor-decoration-recommend .left-box {
+	width: 565px
+}
+
+.root61 .floor-decoration-recommend .left-box .slogan {
+	width: 525px;
+	margin-right: 40px
+}
+
+.root61 .floor-decoration-recommend .left-box .slogan .slogan-item {
+	width: 160px
+}
+
+.root61 .floor-decoration-recommend .left-box .slogan .slogan-item.fore2 {
+	width: 205px
+}
+
+.root61 .floor-decoration-recommend .left-box .slogan .slogan-item.fore2 .p-info {
+	padding: 0
+}
+
+.root61 .floor-decoration-recommend .right-box {
+	width: 524px;
+	padding-left: 40px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .select-l,.root61 .floor-decoration-recommend .right-box .form-box .select-l .option {
+	width: 244px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .select-s,.root61 .floor-decoration-recommend .right-box .form-box .select-s .option {
+	width: 110px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .select-xs {
+	width: 47px;
+	margin-left: 10px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .select-xs .option {
+	width: 47px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .input-box,.root61 .floor-decoration-recommend .right-box .form-box .p-btn {
+	width: 257px
+}
+
+.root61 .floor-decoration-recommend .right-box .form-box .input-box .input {
+	width: 244px
+}</style>
+<script type="text/javascript">/* channel-decoration/1.0.0 recommend.js Date:2016-04-07 10:34:59 */
+$(function() {
+    var a = $(".form-box");
+    var b = {
+        "\u5317\u4eac": [{
+            city: "\u5317\u4eac"
+        }],
+        "\u5929\u6d25": [{
+            city: "\u5929\u6d25"
+        }],
+        "\u6cb3\u5317": [{
+            city: "\u77f3\u5bb6\u5e84"
+        },
+        {
+            city: "\u5510\u5c71"
+        },
+        {
+            city: "\u90af\u90f8"
+        },
+        {
+            city: "\u5eca\u574a"
+        },
+        {
+            city: "\u4fdd\u5b9a"
+        },
+        {
+            city: "\u79e6\u7687\u5c9b"
+        },
+        {
+            city: "\u6ca7\u5dde"
+        },
+        {
+            city: "\u627f\u5fb7"
+        },
+        {
+            city: "\u90a2\u53f0"
+        },
+        {
+            city: "\u8861\u6c34"
+        }],
+        "\u5c71\u897f": [{
+            city: "\u592a\u539f"
+        },
+        {
+            city: "\u664b\u57ce"
+        },
+        {
+            city: "\u7126\u4f5c"
+        },
+        {
+            city: "\u5ffb\u5dde"
+        },
+        {
+            city: "\u4e34\u6c7e"
+        }],
+        "\u5185\u8499\u53e4": [{
+            city: "\u901a\u8fbd"
+        },
+        {
+            city: "\u547c\u548c\u6d69\u7279"
+        },
+        {
+            city: "\u4e4c\u5170\u6d69\u7279"
+        }],
+        "\u6c5f\u82cf": [{
+            city: "\u82cf\u5dde"
+        },
+        {
+            city: "\u9547\u6c5f"
+        },
+        {
+            city: "\u626c\u5dde"
+        },
+        {
+            city: "\u5b9c\u5174"
+        },
+        {
+            city: "\u65e0\u9521"
+        },
+        {
+            city: "\u6606\u5c71"
+        },
+        {
+            city: "\u6c5f\u9634"
+        },
+        {
+            city: "\u5e38\u719f"
+        },
+        {
+            city: "\u5357\u4eac"
+        },
+        {
+            city: "\u592a\u4ed3"
+        },
+        {
+            city: "\u5f90\u5dde"
+        },
+        {
+            city: "\u5e38\u5dde"
+        }],
+        "\u4e0a\u6d77": [{
+            city: "\u4e0a\u6d77"
+        }],
+        "\u5b89\u5fbd": [{
+            city: "\u9a6c\u978d\u5c71"
+        },
+        {
+            city: "\u5408\u80a5"
+        },
+        {
+            city: "\u868c\u57e0"
+        }],
+        "\u5c71\u4e1c": [{
+            city: "\u9752\u5c9b"
+        },
+        {
+            city: "\u80f6\u5dde"
+        },
+        {
+            city: "\u6d4e\u5357"
+        },
+        {
+            city: "\u6ee8\u5dde"
+        },
+        {
+            city: "\u804a\u57ce"
+        },
+        {
+            city: "\u70df\u53f0"
+        },
+        {
+            city: "\u6dc4\u535a"
+        }],
+        "\u6d59\u6c5f": [{
+            city: "\u676d\u5dde"
+        },
+        {
+            city: "\u5b81\u6ce2"
+        },
+        {
+            city: "\u91d1\u534e"
+        },
+        {
+            city: "\u53f0\u5dde"
+        },
+        {
+            city: "\u6c38\u5eb7"
+        },
+        {
+            city: "\u6e29\u5dde"
+        },
+        {
+            city: "\u4e49\u4e4c"
+        },
+        {
+            city: "\u5609\u5174"
+        },
+        {
+            city: "\u8427\u5c71"
+        },
+        {
+            city: "\u6148\u6eaa"
+        },
+        {
+            city: "\u4f59\u59da"
+        },
+        {
+            city: "\u5170\u6eaa"
+        }],
+        "\u6c5f\u897f": [{
+            city: "\u5357\u660c"
+        },
+        {
+            city: "\u5409\u5b89"
+        },
+        {
+            city: "\u8d63\u5dde"
+        },
+        {
+            city: "\u5b9c\u6625"
+        }],
+        "\u6e56\u5357": [{
+            city: "\u957f\u6c99"
+        },
+        {
+            city: "\u5cb3\u9633"
+        },
+        {
+            city: "\u6e58\u6f6d"
+        },
+        {
+            city: "\u682a\u6d32"
+        },
+        {
+            city: "\u8861\u9633"
+        },
+        {
+            city: "\u8012\u9633"
+        },
+        {
+            city: "\u5b81\u4e61"
+        },
+        {
+            city: "\u6d4f\u9633"
+        },
+        {
+            city: "\u90b5\u9633"
+        },
+        {
+            city: "\u76ca\u9633"
+        }],
+        "\u6e56\u5317": [{
+            city: "\u6b66\u6c49"
+        },
+        {
+            city: "\u5b9c\u660c"
+        }],
+        "\u5e7f\u4e1c": [{
+            city: "\u4e1c\u839e"
+        },
+        {
+            city: "\u4f5b\u5c71"
+        },
+        {
+            city: "\u6df1\u5733"
+        },
+        {
+            city: "\u5e7f\u5dde"
+        },
+        {
+            city: "\u60e0\u5dde"
+        }],
+        "\u5e7f\u897f": [{
+            city: "\u5357\u5b81"
+        }],
+        "\u91cd\u5e86": [{
+            city: "\u91cd\u5e86"
+        }],
+        "\u4e91\u5357": [{
+            city: "\u6606\u660e"
+        }],
+        "\u56db\u5ddd": [{
+            city: "\u6210\u90fd"
+        },
+        {
+            city: "\u5357\u5145"
+        },
+        {
+            city: "\u5fb7\u9633"
+        }],
+        "\u8d35\u5dde": [{
+            city: "\u8d35\u9633"
+        },
+        {
+            city: "\u6bd5\u8282"
+        }],
+        "\u9655\u897f": [{
+            city: "\u897f\u5b89"
+        },
+        {
+            city: "\u5b9d\u9e21"
+        },
+        {
+            city: "\u54b8\u9633"
+        },
+        {
+            city: "\u5174\u5e73"
+        },
+        {
+            city: "\u6e2d\u5357"
+        },
+        {
+            city: "\u6986\u6797"
+        }],
+        "\u7518\u8083": [{
+            city: "\u5170\u5dde"
+        }],
+        "\u8fbd\u5b81": [{
+            city: "\u6c88\u9633"
+        },
+        {
+            city: "\u5927\u8fde"
+        }],
+        "\u5409\u6797": [{
+            city: "\u5409\u6797"
+        }],
+        "\u6cb3\u5357": [{
+            city: "\u90d1\u5dde"
+        },
+        {
+            city: "\u767b\u5c01"
+        },
+        {
+            city: "\u5468\u53e3"
+        },
+        {
+            city: "\u5357\u9633"
+        },
+        {
+            city: "\u5e73\u9876\u5c71"
+        },
+        {
+            city: "\u7126\u4f5c"
+        },
+        {
+            city: "\u65b0\u4e61"
+        },
+        {
+            city: "\u957f\u57a3"
+        },
+        {
+            city: "\u83b7\u5609"
+        },
+        {
+            city: "\u8f89\u53bf"
+        },
+        {
+            city: "\u536b\u8f89"
+        },
+        {
+            city: "\u5c01\u4e18"
+        },
+        {
+            city: "\u539f\u9633"
+        },
+        {
+            city: "\u5ef6\u6d25"
+        },
+        {
+            city: "\u6ed1\u53bf"
+        },
+        {
+            city: "\u5b9d\u4e30"
+        },
+        {
+            city: "\u6c5d\u5dde"
+        },
+        {
+            city: "\u5546\u57ce"
+        }],
+        "\u6d77\u5357": [{
+            city: "\u743c\u6d77"
+        }],
+        "\u65b0\u7586": [{
+            city: "\u4e4c\u9c81\u6728\u9f50"
+        }]
+    };
+    var c = a.find(".province-list");
+    for (var d in b) {
+        var e = '<div class="option province-option">' + d + "</div>";
+        c.append(e)
+    }
+    var f = a.find(".city-list");
+    a.find(".province-option").click(function() {
+        var a = $(this);
+        var c = a.text();
+        f.text(""),
+        f.prevAll(".text").text(b[c][0].city);
+        for (var d = 0; d < b[c].length; d++) {
+            var e = '<div class="option">' + b[c][d].city + "</div>";
+            f.append(e)
+        }
+        g()
+    }),
+    a.find(".select").hover(function() {
+        $(this).find(".option-list").show()
+    },
+    function() {
+        $(this).find(".option-list").hide()
+    });
+    var g = function() {
+        a.find(".option").click(function() {
+            var a = $(this);
+            var b = a.text();
+            a.parent().prevAll(".text").removeClass("error").text(b),
+            a.parent().hide()
+        })
+    };
+    g(),
+    a.find(".input").focus(function() {
+        $(this).removeClass("error").val("")
+    });
+    var h = a.find(".form1"),
+    i = a.find(".form2"),
+    j = h.find(".form-date"),
+    k = h.find(".form-area"),
+    l = h.find(".form-budget"),
+    m = h.find(".form-province"),
+    n = h.find(".form-city"),
+    o = i.find(".form-shi"),
+    p = i.find(".form-ting"),
+    q = i.find(".form-wei"),
+    r = i.find(".form-chu"),
+    s = i.find(".form-yangtai"),
+    t = i.find(".form-name"),
+    u = i.find(".form-cellphone"),
+    v = $(".apply-success");
+    a.find(".p-btn-next").click(function() {
+        return "\u671f\u671b\u88c5\u4fee\u65e5\u671f" == j.text() || "\u8bf7\u586b\u5199\u671f\u671b\u88c5\u4fee\u65e5\u671f" == j.text() ? (j.addClass("error").text("\u8bf7\u586b\u5199\u671f\u671b\u88c5\u4fee\u65e5\u671f"), !1) : void("" == k.val() || "\u88c5\u4fee\u9762\u79ef" == k.val() || "\u8bf7\u586b\u5199\u88c5\u4fee\u9762\u79ef" == k.val() | "\u8bf7\u586b\u5199\u6b63\u786e\u6570\u5b57" == k.val() ? k.addClass("error").val("\u8bf7\u586b\u5199\u88c5\u4fee\u9762\u79ef") : /^[0-9]{1,15}$/.test(k.val()) ? "\u88c5\u4fee\u9884\u7b97" == l.text() || "\u8bf7\u586b\u5199\u88c5\u4fee\u9884\u7b97" == l.text() ? l.addClass("error").text("\u8bf7\u586b\u5199\u88c5\u4fee\u9884\u7b97") : (h.hide(), i.show()) : k.addClass("error").val("\u8bf7\u586b\u5199\u6b63\u786e\u6570\u5b57"))
+    }),
+    a.find(".p-btn-return").click(function() {
+        i.hide(),
+        h.show()
+    }),
+    seajs.use(["jdf/1.0.0/unit/login/1.0.0/login", "jdf/1.0.0/ui/dialog/1.0.0/dialog.js"],
+    function(b) {
+        a.find(".p-btn-apply").live("click",
+        function() {
+            "" == t.val() || "\u79f0\u547c" == t.val() || "\u8bf7\u586b\u5199\u79f0\u547c" == t.val() || "\u8bf7\u586b\u5199\u6b63\u786e\u79f0\u547c" == t.val() ? t.addClass("error").val("\u8bf7\u586b\u5199\u79f0\u547c") : /^[\u4e00-\u9fa5_a-zA-Z0-9]{1,50}$/.test(t.val()) ? "" == u.val() || "\u7535\u8bdd\u53f7\u7801" == u.val() || "\u8bf7\u586b\u5199\u7535\u8bdd\u53f7\u7801" == u.val() || "\u8bf7\u586b\u5199\u6b63\u786e\u7535\u8bdd\u53f7\u7801" == u.val() ? u.addClass("error").val("\u8bf7\u586b\u5199\u7535\u8bdd\u53f7\u7801") : /^1[3|4|5|7|8]\d{9}$/.test(u.val()) ? b({
+                modal: !0,
+                complete: function() {
+                    $.ajax({
+                        url: "//passport.jd.com/loginservice.aspx?method=Login",
+                        type: "get",
+                        scriptCharset: "utf-8",
+                        dataType: "jsonp",
+                        async: "false",
+                        success: function(a) {
+                            if (a.Identity.IsAuthenticated) {
+                                var b = a.Identity.Name;
+                                var c = t.val();
+                                var d = u.val();
+                                var e = k.val();
+                                var f = m.text() + n.text();
+                                var g = j.text();
+                                var h = o.text() + "\u5ba4" + p.text() + "\u5385" + q.text() + "\u536b" + r.text() + "\u53a8" + s.text() + "\u9633\u53f0";
+                                var i = l.text();
+                                $.ajax({
+                                    url: "//popdiy.jd.com/json/addDecorate.action",
+                                    type: "post",
+                                    scriptCharset: "utf-8",
+                                    data: {
+                                        userName: c,
+                                        telephone: d,
+                                        houseSize: e,
+                                        address: f,
+                                        exceptionTime: g,
+                                        houseType: h,
+                                        budget: i,
+                                        pin: b,
+                                        source: 0
+                                    },
+                                    dataType: "JSONP",
+                                    success: function(a) {
+                                        1 == a.status ? v.show() : 2 == a.status && (v.find(".success-icon").addClass("applied-icon"), v.find(".p-name").text("\u60a8\u5df2\u7ecf\u63d0\u4ea4\u8fc7\u4e86\uff01"), v.show())
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            }) : u.addClass("error").val("\u8bf7\u586b\u5199\u6b63\u786e\u7535\u8bdd\u53f7\u7801") : t.addClass("error").val("\u8bf7\u586b\u5199\u6b63\u786e\u79f0\u547c")
+        })
+    }),
+    $(".apply-success .p-btn").click(function() {
+        v.hide()
+    }),
+    seajs.use("jdf/1.0.0/ui/fixable/1.0.0/fixable",
+    function() {
+        $(".apply-success").fixable({
+            x: "left",
+            y: "top",
+            xValue: "center",
+            yValue: "center",
+            zIndex: 10
+        })
+    })
+	$.ajax({
+            url: "//popdiy.jd.com/json/getDecorateCount.action",
+            dataType: "jsonp",
+            success: function(r) {
+                if (r) {
+                    $('.recommend-count').text(r.count);
+                }
+            },
+            error: function() {
+            }
+        });
+
+});</script>
+<div class="m floor-decoration-recommend clearfix"> 
+ <div class="left-box"> 
+  <h5 class="title"><span class="icon" style="font-style: italic;"></span><span class="text">免费为您推荐合适的装修服</span></h5> 
+  <div class="p-info">
+    京东装修客服推荐服务，您与靠谱公司的桥梁， 
+   <span class="color">24小时内联络您</span> 
+  </div> 
+  <ul class="slogan"> 
+   <li class="slogan-item fore1"> 
+    <div class="p-img"></div> 
+    <div class="p-slogan">
+      绝对中立 
+    </div> 
+    <div class="p-info">
+      不收取您或装修公司一分钱 
+    </div></li> 
+   <li class="slogan-item fore2"> 
+    <div class="p-img"></div> 
+    <div class="p-slogan">
+      精准推荐 
+    </div> 
+    <div class="p-info">
+      考虑您的特殊情况 
+    </div></li> 
+   <li class="slogan-item fore3"> 
+    <div class="p-img"></div> 
+    <div class="p-slogan">
+      方便省事 
+    </div> 
+    <div class="p-info">
+      坐等靠谱装修公司联系您 
+    </div></li> 
+  </ul> 
+ </div> 
+ <div class="right-box"> 
+  <div class="form-box clearfix"> 
+   <div class="form1"> 
+    <div class="select select-l first"> 
+     <span class="text form-date">期望装修日期</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        半个月内 
+      </div> 
+      <div class="option">
+        两个月内 
+      </div> 
+      <div class="option">
+        半年内 
+      </div> 
+      <div class="option">
+        其他 
+      </div> 
+     </div> 
+    </div> 
+    <div class="input-box"> 
+     <input class="input form-area" placeholder="装修面积" value="装修面积" type="text"> 
+     <span class="unit" style="font-style: italic;">m2</span> 
+    </div> 
+    <div class="select select-l"> 
+     <span class="text form-budget">装修预算</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        0-10万 
+      </div> 
+      <div class="option">
+        10-20万 
+      </div> 
+      <div class="option">
+        20万以上 
+      </div> 
+     </div> 
+    </div> 
+    <div class="select select-s"> 
+     <span class="text form-province">北京</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list province-list"></div> 
+    </div> 
+    <div class="select select-s"> 
+     <span class="text form-city">北京</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list city-list"></div> 
+    </div> 
+    <div class="p-info">
+      已有 
+     <span class="recommend-count">376782</span>位业主获得推荐 
+    </div> 
+    <a href="javascript:void(0)" class="p-btn p-btn-next" clstag="sale|keycount|11660425|1">下一步</a> 
+   </div> 
+   <div class="form2"> 
+    <span class="p-text fore1">房屋户型：</span> 
+    <div class="select select-xs"> 
+     <span class="text form-shi">1</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        1 
+      </div> 
+      <div class="option">
+        2 
+      </div> 
+      <div class="option">
+        3 
+      </div> 
+      <div class="option">
+        4 
+      </div> 
+      <div class="option">
+        5 
+      </div> 
+     </div> 
+    </div> 
+    <span class="p-text">室</span> 
+    <div class="select select-xs"> 
+     <span class="text form-ting">1</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        1 
+      </div> 
+      <div class="option">
+        2 
+      </div> 
+      <div class="option">
+        3 
+      </div> 
+      <div class="option">
+        4 
+      </div> 
+      <div class="option">
+        5 
+      </div> 
+     </div> 
+    </div> 
+    <span class="p-text">厅</span> 
+    <div class="select select-xs"> 
+     <span class="text form-wei">1</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        1 
+      </div> 
+      <div class="option">
+        2 
+      </div> 
+      <div class="option">
+        3 
+      </div> 
+      <div class="option">
+        4 
+      </div> 
+      <div class="option">
+        5 
+      </div> 
+     </div> 
+    </div> 
+    <span class="p-text">卫</span> 
+    <div class="select select-xs"> 
+     <span class="text form-chu">1</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        1 
+      </div> 
+      <div class="option">
+        2 
+      </div> 
+      <div class="option">
+        3 
+      </div> 
+     </div> 
+    </div> 
+    <span class="p-text">厨</span> 
+    <div class="select select-xs"> 
+     <span class="text form-yangtai">1</span> 
+     <span class="down" style="font-style: italic;"></span> 
+     <div class="option-list"> 
+      <div class="option">
+        1 
+      </div> 
+      <div class="option">
+        2 
+      </div> 
+      <div class="option">
+        3 
+      </div> 
+      <div class="option">
+        4 
+      </div> 
+      <div class="option">
+        5 
+      </div> 
+     </div> 
+    </div> 
+    <span class="p-text">阳台</span> 
+    <div class="input-box"> 
+     <input class="input form-name" placeholder="称呼" value="称呼" type="text"> 
+     <span class="unit" style="font-style: italic;">女士/先生</span> 
+    </div> 
+    <div class="input-box"> 
+     <input class="input form-cellphone" placeholder="电话号码" value="电话号码" type="text"> 
+    </div> 
+    <a href="javascript:void(0)" class="p-btn p-btn-return" clstag="sale|keycount|11660425|2">返回修改</a> 
+    <a href="javascript:void(0)" class="p-btn p-btn-apply" clstag="sale|keycount|11660425|3">提交申请</a> 
+    <div class="p-tip">
+      京东承诺：为了您的权益与我们的声誉，京东绝不泄露您的隐私，请您放心。 
+    </div> 
+   </div> 
+  </div> 
+ </div>
+</div>
+<div class="apply-success"> 
+ <div class="p-info"> 
+  <span class="success-icon" style="font-style: italic;"></span> 
+  <div class="p-name">
+    申请成功！ 
+  </div> 
+  <div class="p-text">
+    京东装修管家将在48小时内电话联系您，确认具体信息。 
+  </div> 
+ </div> 
+ <a href="javascript:void(0)" class="p-btn" clstag="sale|keycount|11660425|4">我知道了</a>
+</div>
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+		 	</div>
+     </div>
+</div>
+
+      <div class="d-layout-area " >
+     <div class='d-layout' id="10913623"   >
+	<div class='d-layout-one w990 '>
+	 
+
+
+		<div class=' userdefined-153704' instanceId='10913625'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<a href="//mall.jd.com/index-1000001254.html" target="_blank" clstag="sale|keycount|13115943|1"><img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img12.360buyimg.com/cms/jfs/t2977/112/2163557468/107805/495531bc/579eadc7Neff71d27.jpg" width="990" height="80" alt=""></a>
+<br>
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+
+
+		<div class=' userdefined-153704' instanceId='11795096'  style="margin-bottom: 10px;" module-name="UserDefine" >
+
+	
+     <div class="mc" style=";min-height:0px;">
+		 <div class="j-module" module-function="autoCenter,rid" module-param="{}">
+	<div class="userDefinedArea" style="width:auto;">
+		<a href="//shuixingjiafang.jd.com/" target="_blank" clstag="sale|keycount|15203227|1"><img class="J_imgLazyload" src="//img14.360buyimg.com/cms/g10/M00/13/04/rBEQWFFj4PUIAAAAAAAESxyqJLUAADvdAIHC9oAAARj186.gif"  original="//img11.360buyimg.com/cms/jfs/t3166/219/546206797/37280/1e44722a/57ba6843N4a5df527.jpg" width="990" height="80" alt=""></a>
+	</div>
+</div>
+     </div>
+
+	 </div>
+
+		 	</div>
+     </div>
+</div>
+
+	
+
+	
+<!-- add by zhaohongbo -->
+<!-- 活动页面参数向下传递 -->
+<script>
+    (function() {
+        var jHref = $("a[href*='//'], area[href*='//']"), search = location.search;
+        jHref.each(function() {
+            var _this = $(this);
+            var href = _this.attr("href"), h = href, anchor = '';
+            if (href.indexOf('#') != -1) {
+                href = href.substring(0, href.indexOf('#'));
+                anchor = h.substring(h.indexOf('#'));
+            }
+
+            var arrUrl = href.split('?');
+            if(arrUrl.length === 1) {
+                _this.attr("href", href + search + anchor);
+            } else {
+                _this.attr("href", href + "&" + search.substring(1) + anchor);
+            }
+        });
+    })()
+</script>					<div align="center">
+				
+			</div>
+									<div style="text-align:center;" class="d-pad">
+        		<a target="_blank" title="" href="//c-nfa.jd.com/adclick?keyStr=z5AXFoIimt1jiDK32+w4mYhm0X76xynWc1dOV2nYzUVWK/th/uWWA2XSXhck8cTXiYO1izhl4VIYVFjZo0vru4urrglXtSZpBlRu2pQv+QVa4eG9P+LQ+i7XDdn0nvJz1oEwRbUsC6tQMin70asoRwhXNaR5nYqrHmsT+VZjKgWFWhclsnNbw8mElq6zssLN6gNQlFM1STy6WK92RoRScUAZtDMqu92Zk2jGLX3rU1vGRvmzic7ngEgF99AJAvgSTOyoSgM2nLMOAHVrfAqbE1hjkM7OnOkr7KwEqNLmT9PrDJoBIZGPRHjFcel9Zw17k1pPi3QQHugBh0t83ubxmpa8NFUVHMyP2mSlG83snZA=&cv=2.0&url=//sale.jd.com/act/FChGjnY5byzqZI.html?t=1466473066681"><img width="990" height="74" alt="" src="//img30.360buyimg.com/da/jfs/t2827/16/4291565079/81940/3c0103f7/57b3e653N42ec6738.jpg"></a>
+
+            </div>
+							<div id="jshop-mobile-advertise" style="position:fixed;bottom:10px;">
+	
+</div>
+<script type="text/javascript">
+	if(jQuery.browser.msie&&jQuery.browser.version.match(/6\.0/g)){
+		var __original_top = $(window).height() - 90;
+		$('#jshop-mobile-advertise').css({
+			position : 'absolute',
+			top : __original_top + 'px'
+		});
+		$(window).bind('scroll resize',function(){
+			$('#jshop-mobile-advertise').css('top',$(this).scrollTop() + __original_top + 'px');
+		});
+	}			
+	$('#jshop-mobile-advertise').css({
+		right : '50%',
+		marginRight : '505px'
+	});
+</script>			 </div>
+	<div class="d-price-tips" style="padding:20px 0; text-align:center; font-size:14px; line-height:16px;"><em style="display:inline-block; vertical-align:middle; width:16px; height:16px; margin-right:5px; background:url(//img11.360buyimg.com/cms/jfs/t2125/60/2123383296/1541/97f969bc/56b197daNefbff474.gif)"></em>因可能存在系统缓存、页面更新导致价格变动异常等不确定性情况出现，如您发现活动商品标价或促销信息有异常，请您立即联系我们，以便我们及时补正。</div>
+	<div class="d-pad">
+	<div id="service-2014">
+	<div class="slogen">
+		<span class="item fore1">
+			<i></i><b>多</b>品类齐全，轻松购物
+		</span>
+		<span class="item fore2">
+			<i></i><b>快</b>多仓直发，极速配送
+		</span>
+		<span class="item fore3">
+			<i></i><b>好</b>正品行货，精致服务
+		</span>
+		<span class="item fore4">
+			<i></i><b>省</b>天天低价，畅选无忧
+		</span>
+	</div>
+	<div class="w">
+		<dl class="fore1">
+			<dt>购物指南</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-29.html">购物流程</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-151.html">会员介绍</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-297.html">生活旅行/团购</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue.html">常见问题</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-136.html">大家电</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/index.html">联系客服</a></div>
+			</dd>
+		</dl>
+		<dl class="fore2">
+			<dt>配送方式</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-81-100.html">上门自提</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-81.html">211限时达</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/103-983.html">配送服务查询</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/109-188.html">配送费收取标准</a></div>
+				<div><a target="_blank" href="//en.jd.com/chinese.html">海外配送</a></div>
+			</dd>
+		</dl>
+		<dl class="fore3">
+			<dt>支付方式</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-172.html">货到付款</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-173.html">在线支付</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-176.html">分期付款</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-174.html">邮局汇款</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-175.html">公司转账</a></div>
+			</dd>
+		</dl>
+		<dl class="fore4">
+			<dt>售后服务</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/321-981.html">售后政策</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-132.html">价格保护</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/130-978.html">退款说明</a></div>
+				<div><a rel="nofollow" target="_blank" href="//myjd.jd.com/repair/repairs.action">返修/退换货</a></div>
+				<div><a rel="nofollow" target="_blank" href="//help.jd.com/user/issue/list-50.html">取消订单</a></div>
+			</dd>
+		</dl>
+		<dl class="fore5">
+			<dt>特色服务</dt>
+			<dd>
+				<div><a target="_blank" href="//help.jd.com/user/issue/list-133.html">夺宝岛</a></div>
+				<div><a target="_blank" href="//help.jd.com/user/issue/list-134.html">DIY装机</a></div>
+				<div><a rel="nofollow" target="_blank" href="//fuwu.jd.com/">延保服务</a></div>
+				<div><a rel="nofollow" target="_blank" href="//giftcard.jd.com/market/index.action">京东E卡</a></div>
+				<div><a rel="nofollow" target="_blank" href="//mobile.jd.com/">京东通信</a></div>
+				<div><a rel="nofollow" target="_blank" href="//s.jd.com/">京东JD+</a></div>
+			</dd>
+		</dl>
+		<span class="clr"></span>
+	</div>
+</div>
+	<div class="w">
+	<div id="footer-2014">
+		<div class="links">
+			<a rel="nofollow" target="_blank" href="//www.jd.com/intro/about.aspx">关于我们</a>|<a rel="nofollow" target="_blank" href="//www.jd.com/contact/">联系我们</a>|<a rel="nofollow" target="_blank" href="//www.jd.com/contact/joinin.aspx">商家入驻</a>|<a rel="nofollow" target="_blank" href="//jzt.jd.com">营销中心</a>|<a rel="nofollow" target="_blank" href="//app.jd.com/">手机京东</a>|<a target="_blank" href="//club.jd.com/links.aspx">友情链接</a>|<a target="_blank" href="//media.jd.com/">销售联盟</a>|<a href="//club.jd.com/" target="_blank">京东社区</a>|<a href="//gongyi.jd.com" target="_blank">京东公益</a>|<a href="//en.jd.com/" target="_blank">English Site</a>|<a href="//en.jd.com/help/question-58.html" target="_blank">Contact Us</a>
+		</div>
+		<div class="copyright"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000088"><img src="//img13.360buyimg.com/cms/jfs/t2293/321/1377257360/19256/c267b386/56a0a994Nf1b662dc.png" /> 京公网安备 11000002000088号</a>  |  京ICP证070359号  |  <a target="_blank" href="//img14.360buyimg.com/da/jfs/t256/349/769670066/270505/3b03e0bb/53f16c24N7c04d9e9.jpg">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>  |  新出发京零 字第大120007号<br><a rel="nofollow" href="//misc.360buyimg.com/skin/df/i/com/f_music.jpg" target="_blank">音像制品经营许可证苏宿批005号</a>  |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号<br><a href="//misc.360buyimg.com/wz/wlwhjyxkz.jpg" target="_blank">网络文化经营许可证京网文[2014]2148-348号</a>  违法和不良信息举报电话：4006561155  Copyright © 2004-2016  京东JD.com 版权所有<br>京东旗下网站：<a href="https://www.jdpay.com/" target="_blank">京东钱包</a>
+		</div>
+
+		<div class="authentication">
+			<a rel="nofollow" target="_blank" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202007080200026">
+				<img width="103" height="32" alt="经营性网站备案中心" src="//img12.360buyimg.com/da/jfs/t535/349/1185317137/2350/7fc5b9e4/54b8871eNa9a7067e.png"/>
+			</a>
+			<script type="text/JavaScript">function CNNIC_change(eleId){var str= document.getElementById(eleId).href;var str1 =str.substring(0,(str.length-6));str1+=CNNIC_RndNum(6); document.getElementById(eleId).href=str1;}function CNNIC_RndNum(k){var rnd=""; for (var i=0;i < k;i++) rnd+=Math.floor(Math.random()*10); return rnd;}</script>
+			<a rel="nofollow" target="_blank" id="urlknet" tabindex="-1" href="https://ss.knet.cn/verifyseal.dll?sn=2008070300100000031&ct=df&pa=294005">
+				<img border="true" width="103" height="32" onclick="CNNIC_change('urlknet')" oncontextmenu="return false;" name="CNNIC_seal" alt="可信网站" src="//img11.360buyimg.com/da/jfs/t643/61/1174624553/2576/4037eb5f/54b8872dNe37a9860.png"/>
+			</a>
+			<a rel="nofollow" target="_blank" href="http://www.bj.cyberpolice.cn/index.do">
+				<img width="103" height="32" alt="网络警察" src="//img12.360buyimg.com/cms/jfs/t2050/256/1470027660/4336/2a2c74bd/56a89b8fNfbaade9a.jpg"/>
+			</a>
+			<a rel="nofollow" target="_blank" href="https://search.szfw.org/cert/l/CX20120111001803001836">
+				<img width="103" height="32" src="//img11.360buyimg.com/da/jfs/t451/173/1189513923/1992/ec69b14a/54b8875fNad1e0c4c.png"/>
+			</a>
+            <a target="_blank" href="http://www.12377.cn"><img width="103" height="32" src="//img30.360buyimg.com/da/jfs/t1915/215/1329999964/2996/d7ff13f0/5698dc03N23f2e3b8.jpg"></a>
+            <a target="_blank" href="http://www.12377.cn/node_548446.htm"><img width="103" height="32" src="//img14.360buyimg.com/da/jfs/t2026/221/2097811452/2816/8eb35b4b/5698dc16Nb2ab99df.jpg"></a>
+		</div>
+	</div>
+</div>
+	</div>
+
+	<!--201509 by cdwanchuan-->
+	<script type="text/javascript" src="//static.360buyimg.com/jshop/sale-p/view/20151221110035/script/??module/utils.js,module/Module.js?t=201605122327"></script>
+	<script type="text/javascript" src="//static.360buyimg.com/jshop/sale-p/view/20151221110035/script/??CookieUtil.js,lib-v1.js?t=201605122327"></script>
+	<script src="//static.360buyimg.com/jshop/sale-p/view/20151221110035/script/view/entrance.js?t=201605122327"></script>
+	<script src="//static.360buyimg.com/jshop/sale-p/view/20151221110035/script/??jshop.lib-v1.js?t=201605122327"></script>
+		<script language="javascript" src="//static.360buyimg.com/jshop/sale-p/view/20151221110035/script/??advertise.js?t=201605122327"></script>
+			<script id="jshopSidebar" src="//static.360buyimg.com/jshop/common/utility/sidebar/sidebar.js?type=0&id=433151" type="text/javascript" charset="UTF-8"></script>
+<img src="//jcm.jd.com/pre" width="1" height="1" style="display:none;"/>
+	<script type="text/javascript" src="//wl.jd.com/wl.js"></script>
+
+</body>
+</html>
